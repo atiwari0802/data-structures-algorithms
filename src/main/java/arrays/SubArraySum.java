@@ -7,6 +7,9 @@ import java.util.HashMap;
 public class SubArraySum {
 
   /**
+   * It uses the sliding window technique where one end of the widow is fixed while the other
+   * moves incrementally until the end of the array.
+   *
    * It is based on the principle of cumulative additions. As we iterate over the list, we keep
    * adding each entry to a running sum. Each new value of the running sum is added to a Map with a
    * value of 1. If the sum already exists, then, its value incremented by 1.
