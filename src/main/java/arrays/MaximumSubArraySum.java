@@ -19,6 +19,9 @@ public class MaximumSubArraySum {
      * is moved to next index and the process is repeated until the last element
      * has been scanned.
      *
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     *
      * @param input
      * @return int
      */
