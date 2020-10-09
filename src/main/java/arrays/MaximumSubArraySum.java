@@ -46,7 +46,7 @@ public class MaximumSubArraySum {
         return new MaxSubArrayWindow(startIndex, endIndex, maxSum);
     }
 
-    public static class MaxSubArrayWindow {
+    static class MaxSubArrayWindow {
         int startIndex, endIndex, maxSum;
 
         public MaxSubArrayWindow(int startIndex, int endIndex, int maxSum) {
