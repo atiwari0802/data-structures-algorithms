@@ -95,6 +95,10 @@ public class RotateArray {
      *   n - 1 - j, i <--- i, j
      *
      * Complete such iterations for all the rings.
+     
+     * Time Complexity: O(N^2)
+     * Space Complexity: O(1)
+     *
      * @param matrix
      */
     public List<List<Integer>> rotateMatrixUsingRectangleMethod(List<List<Integer>> matrix) {
