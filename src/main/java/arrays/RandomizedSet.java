@@ -1,11 +1,28 @@
 package arrays;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
+/**
+ * The requirements for this class is to have insertion, deletion and getting random index in
+ * O(1) time.
+ * <p>
+ * Array-List provide O(1) additions and retrievals (if the index is known). But removal takes O(n) time.
+ * <p>
+ * Hash-Maps offer O(1) look-up, insertions and deletions but search and getting random index will take O(n)
+ * time.
+ * <p>
+ * So, in this approach, we combine the best of both worlds by combining a HashMap with an ArrayList.
+ * The HashMap holds the values stored as keys and their positions in the list as values.
+ * <p>
+ * For additions, if the value is absent from the Map, the value is added to the list and its index is updated in the map.
+ *
+ * For deletions, if the value is present, its position/index is picked up from the map and the last entry of list is
+ * set to this index. The value of last entry in the map is updated to the index of the value being removed.
+ * After this, the last element of the list is removed along with the value from the index.
+ *
+ * For getting random index, we simply pick an index between 0 and list size (exclusive)
+ *
+ */
 public class RandomizedSet {
 
     private Map<Integer, Integer> keyIndex;
