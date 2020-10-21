@@ -6,20 +6,20 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class MinimumJumpsTest {
+public class PathToTheEndOfTheListTest {
 
-    private MinimumJumps minimumJumps;
+    private PathToTheEndOfTheList pathToTheEndOfTheList;
 
     @BeforeEach
     public void setup() {
-        minimumJumps = new MinimumJumps();
+        pathToTheEndOfTheList = new PathToTheEndOfTheList();
     }
 
     @Test
     public void testMinimumJumpsRecursive() {
         List<Integer> list = List.of(2, 3, 1, 1, 4);
 
-        boolean result = minimumJumps.canJumpRecursive(list);
+        boolean result = pathToTheEndOfTheList.canJumpRecursive(list);
 
         Assertions.assertTrue(result);
     }
@@ -28,7 +28,7 @@ public class MinimumJumpsTest {
     public void testMinimumJumpsRecursiveFalseCondition() {
         List<Integer> list = List.of(3, 2, 1, 0, 4);
 
-        boolean result = minimumJumps.canJumpRecursive(list);
+        boolean result = pathToTheEndOfTheList.canJumpRecursive(list);
 
         Assertions.assertFalse(result);
     }
@@ -37,7 +37,7 @@ public class MinimumJumpsTest {
     public void testMinimumJumpsGreedy() {
         List<Integer> list = List.of(2, 3, 1, 1, 4);
 
-        boolean result = minimumJumps.canReachEndGreedy(list);
+        boolean result = pathToTheEndOfTheList.canReachEndGreedy(list);
 
         Assertions.assertTrue(result);
     }
@@ -46,7 +46,7 @@ public class MinimumJumpsTest {
     public void testMinimumJumpsGreedyFalse() {
         List<Integer> list = List.of(3, 2, 1, 0, 4);
 
-        boolean result = minimumJumps.canReachEndGreedy(list);
+        boolean result = pathToTheEndOfTheList.canReachEndGreedy(list);
 
         Assertions.assertFalse(result);
     }

@@ -2,7 +2,7 @@ package greedy.algorithms;
 
 import java.util.List;
 
-public class MinimumJumps {
+public class PathToTheEndOfTheList {
 
     /**
      * The recursive approach is akin to enumerating all the solutions, except in
