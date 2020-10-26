@@ -2,7 +2,7 @@ package greedy.algorithms;
 
 import java.util.Arrays;
 
-public class LeastInterval {
+public class TaskScheduler {
     /**
      * In this algorithm, we take the greedy approach.
      * <p>

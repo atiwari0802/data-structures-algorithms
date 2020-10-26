@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class LeastIntervalTest {
+public class TaskSchedulerTest {
 
-    private LeastInterval leastInterval;
+    private TaskScheduler taskScheduler;
 
     @BeforeEach
     public void setup() {
-        leastInterval = new LeastInterval();
+        taskScheduler = new TaskScheduler();
     }
 
     @Test
@@ -18,7 +18,7 @@ public class LeastIntervalTest {
         char[] tasks = {'A', 'A', 'A', 'B', 'B', 'B'};
         int waitTime = 2;
 
-        int result = leastInterval.leastInterval(tasks, waitTime);
+        int result = taskScheduler.leastInterval(tasks, waitTime);
 
         Assertions.assertEquals(8, result);
     }
