@@ -23,7 +23,8 @@ public class MinJumps {
      * visited element.
      * <p>
      * If the current index cannot be reached from the last visited element,
-     * we return INT_MAX
+     * we return INT_MAX, as the maximum displacement cannot reach the current
+     * element.
      *
      * Time Complexity: O(n)
      * Space Complexity: O(1)
