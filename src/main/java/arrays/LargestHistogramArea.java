@@ -21,7 +21,7 @@ public class LargestHistogramArea {
      * Let current-element-index be i. The width is:
      * <p>
      * width = i - 1 - stack.top, if stack is not empty; i otherwise
-     * (i - 1 is used because the current element is one ahead of the index in consideration.
+     * (i - 1 is used because the current element is one position ahead of the index in consideration.
      * <p>
      * And i is used if stack is empty because the start index is 0 and stack being empty means
      * that the width spans until the beginning of the array, which comes out to be i - 1 + 1 = i.)
@@ -32,6 +32,7 @@ public class LargestHistogramArea {
      * height = height of index that was popped.
      * <p>
      * area = width * height;
+     * (For the last element, the width spans the entire size of the array)
      * We maintain a global variable to store the max area that has been encountered.
      * <p>
      * The rationale behind this approach is that area is limited by the height of the of the bar
@@ -55,9 +56,9 @@ public class LargestHistogramArea {
             } else {
                 while (!stack.isEmpty() && heights.get(stack.peekLast()) > heights.get(index)) {
                     int currentIndex = stack.pollLast();
-                    int distance = heights.get(currentIndex);
+                    int height = heights.get(currentIndex);
                     int width = stack.isEmpty() ? index : index - 1 - stack.peekLast();
-                    maxArea = Math.max(maxArea, distance * width);
+                    maxArea = Math.max(maxArea, height * width);
                 }
             }
         }
@@ -65,7 +66,7 @@ public class LargestHistogramArea {
         while (!stack.isEmpty()) {
             int currentIndex = stack.pollLast();
             int height = heights.get(currentIndex);
-            int width = stack.isEmpty() ? size - 1 : size - 1 - stack.peekLast();
+            int width = stack.isEmpty() ? size : size - 1 - stack.peekLast();
             maxArea = Math.max(maxArea, height * width);
         }
 
