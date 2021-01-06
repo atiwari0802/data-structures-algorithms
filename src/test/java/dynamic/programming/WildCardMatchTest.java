@@ -28,4 +28,12 @@ public class WildCardMatchTest {
 
     Assertions.assertTrue(wildCardMatch.isMatchMemoized(s, p));
   }
+
+  @Test
+  public void testWildCardMatchDP() {
+    String s = "xyxzzxy";
+    String p = "x***x?";
+
+    Assertions.assertTrue(wildCardMatch.isMatchDP(s, p));
+  }
 }
